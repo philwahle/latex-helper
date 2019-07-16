@@ -1,0 +1,30 @@
+
+% command shortcut to reference an image or figure
+\newcommand{\imgref}[1]
+{
+	Fig.~\ref{#1}
+}
+
+
+% a command to give a image a full width
+% usage: \imgfull{<imgpath>}{<caption>}{<fig:label>}
+\newcommand{\imgfull}[3]
+{
+	\begin{figure*}[ht]
+		\centerline{\includegraphics[width=\textwidth]{#1}}
+		\caption{#2}
+		\label{#3}
+	\end{figure*}
+}
+
+% a command to include a image in the current position
+% usage: \imgfull{<imgpath>}{<caption>}{<fig:label>}{<scale>}
+% 	scale: recommended .45
+\newcommand{\img}[4]
+{
+	\begin{figure}[htbp]
+		\centerline{\includegraphics[scale=#4]{#1}}
+		\caption{#2}
+		\label{#3}
+	\end{figure}
+}
