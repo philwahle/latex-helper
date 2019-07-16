@@ -1,0 +1,50 @@
+% Eigene Befehle 
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\TDesc}{\vspace{.3cm}}
+%Titlepage
+\newcommand{\customtitlepage}[5]
+{
+\begin{titlepage}
+	%Neue Außenabstände
+	\newgeometry{margin=0cm}
+
+	% Positionierung des  Logos
+	\vspace*{.2cm}
+	\begin{flushright}
+		\advance\rightskip+2cm
+		% todo: change logo to the proper one
+		%\includegraphics[width=.4\textwidth]{img/logo.png} %\\[10cm]
+	 	\includegraphics[width=.25\textwidth]{img/logo.png} %\\[10cm]
+	\end{flushright}
+	
+	%Dolumententitel
+	\begin{center}
+		\vfill
+
+		% Title
+		\HRule \\[0.4cm]
+		\textsc{
+		 \Huge{#1} \\[0.4cm]
+		 \large{#2}
+		}\\[0.5cm]
+		\HRule \\[1.5cm]
+
+		\vfill
+
+		% Fußzeile
+		\begin{minipage}[t]{0.4\textwidth}
+			\begin{flushleft} %\large
+				#3
+				\\
+				#4
+			\end{flushleft}
+		\end{minipage}
+		\begin{minipage}[t]{0.4\textwidth}
+			\begin{flushright} %\large
+				#5
+			\end{flushright}
+		\end{minipage}
+		\vspace{1cm}
+	\end{center}
+\end{titlepage}
+}

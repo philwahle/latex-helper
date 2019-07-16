@@ -1,0 +1,102 @@
+%%
+%% Diese Datei beinhaltet alle Wichtigen und Gängigen
+%% packages, die zu erstellung von Dokumenten benötigt 
+%% werden. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Deutsche Anpassungen %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{lmodern} %Type1-Schriftart für nicht-englische Texte
+
+%% Deckblatt %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{changepage}
+
+%% Links unterhab des Dokumentes %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[
+colorlinks=true,linkcolor=blue
+]{hyperref}
+\usepackage{ifpdf}
+
+%% Packages für Literaturangabe %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[babel,german=guillemets]{csquotes}
+\usepackage[backend=bibtex8]{biblatex}
+%\bibliography{literatur}
+
+%% Index
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{makeidx}
+
+%% Glossar %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[
+%nonumberlist, %keine Seitenzahlen anzeigen
+nomain, % nomain, if you define glossaries in a file, and you use \include{•}
+acronym, %ein Abkürzungsverzeichnis erstellen
+xindy,
+toc,%Einträge im Inhaltsverzeichnis
+section] %im Inhaltsverzeichnis auf section-Ebene erscheinen
+{glossaries} 
+% \include{INP-00-glossary}
+
+%% Packages für Grafiken & Abbildungen & Farben %%%%%%%%%%%%%
+\usepackage{graphicx} %%Zum Laden von Grafiken
+%\usepackage{subfig} %%Teilabbildungen in einer Abbildung
+%\usepackage{pst-all} %%PSTricks - nicht verwendbar mit pdfLaTeX
+\usepackage{xcolor} %%für farben
+\usepackage{tikz}  %% für Grafikerstellung
+\usetikzlibrary{matrix, fadings, calc, positioning, decorations.pathreplacing,arrows}
+
+
+%% Packages für Formeln %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+\usepackage{amsthm}
+%\usepackage{amsfonts}
+%\usepackage{mathabx}
+
+%% Package für Listen %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{mdwlist}
+\usepackage{paralist}
+
+%% Package für Tabellen %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{tabularx}
+\usepackage{longtable} %%Für Tabellen, die eine Seite überschreiten
+%tabellen für wisenschaftliche Arbeiten \toprule, \midrule \bottomrule
+\usepackage{booktabs}
+
+%% Zeilenabstand %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{setspace}
+%\singlespacing        %% 1-zeilig (Standard)
+%\onehalfspacing       %% 1,5-zeilig
+%\doublespacing        %% 2-zeilig
+
+%% UML Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% requires tikz
+%% http://www.ensta-paristech.fr/~kielbasi/tikzuml/doc/tikzuml-v0.9.9.pdf
+%\usepackage{ifthen} %This package oers the management of conditional test, such as if . . . then . . . else . . .
+%\usepackage{xstring} %: This package oers string substitutions. It is used for the management of names between
+%programmation items (classes, states, packages, . . . ) and and the nodes representing them.
+%\usepackage{calc} % This package oers easy access to calculations.
+%\usepackage{pgfopts} % This package is an add-on of the pgfkeys package for the management of packages and classes options.
+%\usepackage{tikz-uml}
+
+%% Andere Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{a4wide} %%Kleinere Seitenränder = mehr Text pro Zeile.
+%\usepackage{fancyheadings}%%Fancy Kopf- und Fußzeilen
+\usepackage{fancyhdr} 
+\usepackage{a4wide}     % Reduzierte Seitenränder
+\usepackage{lastpage} % for the number of the last page in the document
+
+\usepackage {ulem}
+
+\usepackage{nameref}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Anmerkungen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{lipsum} %Blindtext
+\usepackage{blindtext}
+\usepackage{listings}
+\lstset{language=Octave}          % Set your language (you can change the language for each code-block optionally)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,28 @@
+% Eigene Befehle 
+\newcommand{\img}[3]
+{
+\begin{minipage}{\linewidth}
+
+ \vspace{.25cm}
+	\centering
+	\includegraphics[scale=.55]{img/#1}%
+	\captionof{figure}[#2]{#2}%
+	\label{#3}
+\end{minipage}
+}
+
+\newcommand{\imgref}[1]
+{
+Abb. ~\ref{#1}: \nameref{#1}
+}
+
+
+\makeatletter
+%\renewcommand{\@chapapp}{}% Not necessary...
+\newenvironment{chapquote}[2][2em]
+  {\setlength{\@tempdima}{#1}%
+   \def\chapquote@author{#2}%
+   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+   \itshape}
+  {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
+\makeatother

@@ -1,0 +1,113 @@
+%%
+%% LaTeX Vorlage zur Erstellung von Dokumenten
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% HEADER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,oneside,12pt]{scrartcl}%scrreprt , 
+% Dokumentation umradnungen zeigen
+%\usepackage[showframe,paper=a4paper,margin=1in]{geometry}
+% Alternative Optionen:
+%	Papiergröße: a4paper / a5paper / b5paper / letterpaper / legalpaper / executivepaper
+% Duplex: one-side / twoside
+% Grundlegende Fontgrößen: 10pt / 11pt / 12pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Benötige Packete einbinden
+\include{packages}
+%% MAKROS
+\include{makros}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Anmerkungen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% OPTIONEN / MODIFIKATIONEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Titlepage
+\input{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% OPTIONEN FÜR KOPF- UND FUSSZEILEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\fancyhead[LE,RO]{\slshape \rightmark} 
+\fancyhead[LO,RE]{\slshape \leftmark}
+\fancyfoot[C]{\thepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Glossar % Index
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeglossaries  %Glossar-Befehle anschalten
+\include{Glossar}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Literaturangabe
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Eine Datei 'literatur.bib' wird hierfür benötigt.
+\bibliography{literatur} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DOKUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%leeres Dokument
+\pagestyle{empty}
+
+%%  Deckblatt 
+\customtitlepage{Title}{Subtitle}{Author\\ Matr.Nr.: 123456}{\today}{Wirtschaftswissenschaften II \\ Angewandte Informatik \\ Class \\ Prof. Dr. xxx xxx}
+
+%% Ab hier mit Kopf- und Fußzeilen
+\pagestyle{fancy}
+
+%%
+%% Inhaltsverzeichnis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents %Toc
+\cleardoublepage % Erste Kapitel, soll auf einer ungeraden Seite beginnen
+
+%%
+%% Kapiel / Hauptteil des Dokumentes %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{section}
+
+%%
+%%  Literatur und Andere Verzeichnisse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+%% Liteatruverzeichnis
+%% ==> Eine Datei 'literatur.bib' wird hierfür benötigt.
+%% ==> Sie müssen hierfür BibTeX verwenden (Projekt | Eigenschaften... | BibTeX)
+\addcontentsline{toc}{section}{Literaturverzeichnis}
+\nocite{*}
+\printbibliography
+ %Auch nicht-zitierte BibTeX-Einträge werden angezeigt.
+%\bibliographystyle{plain} %Art der Ausgabe: plain / apalike / amsalpha %/ ...
+
+
+%% Abbildungsverzeichnis
+%\clearpage 
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+\listoffigures 
+
+%% Tabellenverzeichnis
+%\clearpage  
+\addcontentsline{toc}{section}{Tabellenverzeichnis}
+\listoftables
+
+
+%%
+%% Anhänge
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\appendix
+%\clearpage 
+%\printglossary[title=Glossar,style=altlistgroup]
+
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
